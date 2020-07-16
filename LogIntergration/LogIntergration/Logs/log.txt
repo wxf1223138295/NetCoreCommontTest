@@ -1,0 +1,304 @@
+2020-07-16 14:48:40.963 +08:00 [DBG] Hosting starting
+2020-07-16 14:48:41.373 +08:00 [DBG] Failed to locate the development https certificate at 'null'.
+2020-07-16 14:48:41.448 +08:00 [INF] Now listening on: http://localhost:5000
+2020-07-16 14:48:41.453 +08:00 [DBG] Loaded hosting startup assembly LogIntergration
+2020-07-16 14:48:41.457 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-07-16 14:48:41.460 +08:00 [INF] Hosting environment: Development
+2020-07-16 14:48:41.463 +08:00 [INF] Content root path: D:\Data\Project\MyTest\LogTest\LogIntergration\LogIntergration
+2020-07-16 14:48:41.467 +08:00 [DBG] Hosting started
+2020-07-16 14:48:41.886 +08:00 [DBG] Connection id "0HM19AH3GLM6M" accepted.
+2020-07-16 14:48:41.886 +08:00 [DBG] Connection id "0HM19AH3GLM6L" accepted.
+2020-07-16 14:48:41.908 +08:00 [DBG] Connection id "0HM19AH3GLM6M" started.
+2020-07-16 14:48:41.912 +08:00 [DBG] Connection id "0HM19AH3GLM6L" started.
+2020-07-16 14:48:42.015 +08:00 [DBG] Connection id "0HM19AH3GLM6L" received FIN.
+2020-07-16 14:48:42.015 +08:00 [DBG] Connection id "0HM19AH3GLM6M" received FIN.
+2020-07-16 14:48:42.095 +08:00 [DBG] Connection id "0HM19AH3GLM6L" sending FIN because: "The client closed the connection."
+2020-07-16 14:48:42.095 +08:00 [DBG] Connection id "0HM19AH3GLM6M" sending FIN because: "The client closed the connection."
+2020-07-16 14:48:42.113 +08:00 [DBG] Connection id "0HM19AH3GLM6L" disconnecting.
+2020-07-16 14:48:42.116 +08:00 [DBG] Connection id "0HM19AH3GLM6M" disconnecting.
+2020-07-16 14:48:42.128 +08:00 [DBG] Connection id "0HM19AH3GLM6L" stopped.
+2020-07-16 14:48:42.128 +08:00 [DBG] Connection id "0HM19AH3GLM6M" stopped.
+2020-07-16 14:48:44.522 +08:00 [DBG] Connection id "0HM19AH3GLM6N" accepted.
+2020-07-16 14:48:44.583 +08:00 [DBG] Connection id "0HM19AH3GLM6N" started.
+2020-07-16 14:48:44.589 +08:00 [DBG] Connection id "0HM19AH3GLM6O" accepted.
+2020-07-16 14:48:44.608 +08:00 [DBG] Connection id "0HM19AH3GLM6O" started.
+2020-07-16 14:48:44.841 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/weatherforecast  
+2020-07-16 14:48:44.870 +08:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2020-07-16 14:48:44.893 +08:00 [WRN] Failed to determine the https port for redirect.
+2020-07-16 14:48:44.962 +08:00 [DBG] 1 candidate(s) found for the request path '/weatherforecast'
+2020-07-16 14:48:44.995 +08:00 [DBG] Endpoint 'LogIntergration.Controllers.WeatherForecastController.Get (LogIntergration)' with route pattern 'WeatherForecast' is valid for the request path '/weatherforecast'
+2020-07-16 14:48:45.098 +08:00 [DBG] Request matched endpoint 'LogIntergration.Controllers.WeatherForecastController.Get (LogIntergration)'
+2020-07-16 14:48:45.109 +08:00 [INF] Executing endpoint 'LogIntergration.Controllers.WeatherForecastController.Get (LogIntergration)'
+2020-07-16 14:48:45.135 +08:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexTypeModelBinderProvider"]
+2020-07-16 14:48:45.312 +08:00 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[LogIntergration.WeatherForecast] Get() on controller LogIntergration.Controllers.WeatherForecastController (LogIntergration).
+2020-07-16 14:48:45.334 +08:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2020-07-16 14:48:45.341 +08:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2020-07-16 14:48:45.349 +08:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2020-07-16 14:48:45.364 +08:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2020-07-16 14:48:45.368 +08:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2020-07-16 14:48:45.382 +08:00 [DBG] Executing controller factory for controller LogIntergration.Controllers.WeatherForecastController (LogIntergration)
+2020-07-16 14:48:45.394 +08:00 [DBG] Executed controller factory for controller LogIntergration.Controllers.WeatherForecastController (LogIntergration)
+2020-07-16 14:48:45.512 +08:00 [INF] Executing action method LogIntergration.Controllers.WeatherForecastController.Get (LogIntergration) - Validation state: "Valid"
+2020-07-16 14:48:45.527 +08:00 [ERR] sdsadsad
+2020-07-16 14:48:45.538 +08:00 [WRN] s111111111111111
+2020-07-16 14:48:45.556 +08:00 [INF] Executed action method LogIntergration.Controllers.WeatherForecastController.Get (LogIntergration), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 22.2111ms.
+2020-07-16 14:48:45.568 +08:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2020-07-16 14:48:45.591 +08:00 [DBG] No information found on request to perform content negotiation.
+2020-07-16 14:48:45.601 +08:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2020-07-16 14:48:45.632 +08:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2020-07-16 14:48:45.667 +08:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2020-07-16 14:48:45.702 +08:00 [INF] Executing ObjectResult, writing value of type 'LogIntergration.WeatherForecast[]'.
+2020-07-16 14:48:45.787 +08:00 [INF] Executed action LogIntergration.Controllers.WeatherForecastController.Get (LogIntergration) in 399.3935ms
+2020-07-16 14:48:45.806 +08:00 [INF] Executed endpoint 'LogIntergration.Controllers.WeatherForecastController.Get (LogIntergration)'
+2020-07-16 14:48:45.818 +08:00 [DBG] Connection id "0HM19AH3GLM6N" completed keep alive response.
+2020-07-16 14:48:45.833 +08:00 [INF] Request finished in 998.6299ms 200 application/json; charset=utf-8
+2020-07-16 14:48:47.893 +08:00 [DBG] Connection id "0HM19AH3GLM6O" received FIN.
+2020-07-16 14:48:47.893 +08:00 [DBG] Connection id "0HM19AH3GLM6N" received FIN.
+2020-07-16 14:48:47.900 +08:00 [DBG] Connection id "0HM19AH3GLM6O" sending FIN because: "The client closed the connection."
+2020-07-16 14:48:47.901 +08:00 [DBG] Connection id "0HM19AH3GLM6N" sending FIN because: "The client closed the connection."
+2020-07-16 14:48:47.909 +08:00 [DBG] Connection id "0HM19AH3GLM6O" disconnecting.
+2020-07-16 14:48:47.912 +08:00 [DBG] Connection id "0HM19AH3GLM6N" disconnecting.
+2020-07-16 14:48:47.916 +08:00 [DBG] Connection id "0HM19AH3GLM6O" stopped.
+2020-07-16 14:48:47.919 +08:00 [DBG] Connection id "0HM19AH3GLM6N" stopped.
+2020-07-16 14:56:16.598 +08:00 [DBG] Hosting starting
+2020-07-16 14:56:16.955 +08:00 [DBG] Failed to locate the development https certificate at 'null'.
+2020-07-16 14:56:17.030 +08:00 [INF] Now listening on: http://localhost:5000
+2020-07-16 14:56:17.035 +08:00 [DBG] Loaded hosting startup assembly LogIntergration
+2020-07-16 14:56:17.038 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-07-16 14:56:17.046 +08:00 [INF] Hosting environment: Development
+2020-07-16 14:56:17.050 +08:00 [INF] Content root path: D:\Data\Project\MyTest\LogTest\LogIntergration\LogIntergration
+2020-07-16 14:56:17.053 +08:00 [DBG] Hosting started
+2020-07-16 14:56:17.506 +08:00 [DBG] Connection id "0HM19ALB9PJSQ" accepted.
+2020-07-16 14:56:17.506 +08:00 [DBG] Connection id "0HM19ALB9PJSR" accepted.
+2020-07-16 14:56:17.555 +08:00 [DBG] Connection id "0HM19ALB9PJSR" started.
+2020-07-16 14:56:17.555 +08:00 [DBG] Connection id "0HM19ALB9PJSQ" started.
+2020-07-16 14:56:17.558 +08:00 [DBG] Connection id "0HM19ALB9PJSQ" received FIN.
+2020-07-16 14:56:17.602 +08:00 [DBG] Connection id "0HM19ALB9PJSR" received FIN.
+2020-07-16 14:56:17.648 +08:00 [DBG] Connection id "0HM19ALB9PJSR" sending FIN because: "The client closed the connection."
+2020-07-16 14:56:17.648 +08:00 [DBG] Connection id "0HM19ALB9PJSQ" sending FIN because: "The client closed the connection."
+2020-07-16 14:56:17.669 +08:00 [DBG] Connection id "0HM19ALB9PJSR" disconnecting.
+2020-07-16 14:56:17.683 +08:00 [DBG] Connection id "0HM19ALB9PJSQ" disconnecting.
+2020-07-16 14:56:17.693 +08:00 [DBG] Connection id "0HM19ALB9PJSR" stopped.
+2020-07-16 14:56:17.720 +08:00 [DBG] Connection id "0HM19ALB9PJSQ" stopped.
+2020-07-16 14:56:20.094 +08:00 [DBG] Connection id "0HM19ALB9PJSS" accepted.
+2020-07-16 14:56:20.181 +08:00 [DBG] Connection id "0HM19ALB9PJSS" started.
+2020-07-16 14:56:20.186 +08:00 [DBG] Connection id "0HM19ALB9PJST" accepted.
+2020-07-16 14:56:20.220 +08:00 [DBG] Connection id "0HM19ALB9PJST" started.
+2020-07-16 14:56:20.317 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/weatherforecast  
+2020-07-16 14:56:20.335 +08:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2020-07-16 14:56:20.344 +08:00 [WRN] Failed to determine the https port for redirect.
+2020-07-16 14:56:20.399 +08:00 [DBG] 1 candidate(s) found for the request path '/weatherforecast'
+2020-07-16 14:56:20.410 +08:00 [DBG] Endpoint 'LogIntergration.Controllers.WeatherForecastController.Get (LogIntergration)' with route pattern 'WeatherForecast' is valid for the request path '/weatherforecast'
+2020-07-16 14:56:20.434 +08:00 [DBG] Request matched endpoint 'LogIntergration.Controllers.WeatherForecastController.Get (LogIntergration)'
+2020-07-16 14:56:20.461 +08:00 [INF] Executing endpoint 'LogIntergration.Controllers.WeatherForecastController.Get (LogIntergration)'
+2020-07-16 14:56:20.489 +08:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexTypeModelBinderProvider"]
+2020-07-16 14:56:20.671 +08:00 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[LogIntergration.WeatherForecast] Get() on controller LogIntergration.Controllers.WeatherForecastController (LogIntergration).
+2020-07-16 14:56:20.730 +08:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2020-07-16 14:56:20.741 +08:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2020-07-16 14:56:20.745 +08:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2020-07-16 14:56:20.755 +08:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2020-07-16 14:56:20.759 +08:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2020-07-16 14:56:20.773 +08:00 [DBG] Executing controller factory for controller LogIntergration.Controllers.WeatherForecastController (LogIntergration)
+2020-07-16 14:56:20.781 +08:00 [DBG] Executed controller factory for controller LogIntergration.Controllers.WeatherForecastController (LogIntergration)
+2020-07-16 14:56:20.882 +08:00 [INF] Executing action method LogIntergration.Controllers.WeatherForecastController.Get (LogIntergration) - Validation state: "Valid"
+2020-07-16 14:56:20.905 +08:00 [ERR] sdsadsad
+2020-07-16 14:56:20.907 +08:00 [WRN] s111111111111111
+2020-07-16 14:56:20.925 +08:00 [INF] Executed action method LogIntergration.Controllers.WeatherForecastController.Get (LogIntergration), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 15.2663ms.
+2020-07-16 14:56:20.937 +08:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2020-07-16 14:56:20.951 +08:00 [DBG] No information found on request to perform content negotiation.
+2020-07-16 14:56:20.959 +08:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2020-07-16 14:56:20.967 +08:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2020-07-16 14:56:20.972 +08:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2020-07-16 14:56:20.982 +08:00 [INF] Executing ObjectResult, writing value of type 'LogIntergration.WeatherForecast[]'.
+2020-07-16 14:56:21.040 +08:00 [INF] Executed action LogIntergration.Controllers.WeatherForecastController.Get (LogIntergration) in 259.3302ms
+2020-07-16 14:56:21.061 +08:00 [INF] Executed endpoint 'LogIntergration.Controllers.WeatherForecastController.Get (LogIntergration)'
+2020-07-16 14:56:21.079 +08:00 [DBG] Connection id "0HM19ALB9PJSS" completed keep alive response.
+2020-07-16 14:56:21.104 +08:00 [INF] Request finished in 791.5376ms 200 application/json; charset=utf-8
+2020-07-16 14:56:27.976 +08:00 [DBG] Connection id "0HM19ALB9PJSS" received FIN.
+2020-07-16 14:56:27.976 +08:00 [DBG] Connection id "0HM19ALB9PJST" received FIN.
+2020-07-16 14:56:32.653 +08:00 [DBG] Connection id "0HM19ALB9PJSS" sending FIN because: "The client closed the connection."
+2020-07-16 14:56:32.654 +08:00 [DBG] Connection id "0HM19ALB9PJST" sending FIN because: "The client closed the connection."
+2020-07-16 14:56:32.661 +08:00 [DBG] Connection id "0HM19ALB9PJSS" disconnecting.
+2020-07-16 14:56:32.664 +08:00 [DBG] Connection id "0HM19ALB9PJST" disconnecting.
+2020-07-16 14:56:32.669 +08:00 [DBG] Connection id "0HM19ALB9PJSS" stopped.
+2020-07-16 14:56:32.669 +08:00 [DBG] Connection id "0HM19ALB9PJST" stopped.
+2020-07-16 15:01:34.350 +08:00 [DBG] Hosting starting
+2020-07-16 15:01:34.770 +08:00 [DBG] Failed to locate the development https certificate at 'null'.
+2020-07-16 15:01:34.838 +08:00 [INF] Now listening on: http://localhost:5000
+2020-07-16 15:01:34.845 +08:00 [DBG] Loaded hosting startup assembly LogIntergration
+2020-07-16 15:01:34.849 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-07-16 15:01:34.854 +08:00 [INF] Hosting environment: Development
+2020-07-16 15:01:34.857 +08:00 [INF] Content root path: D:\Data\Project\MyTest\LogTest\LogIntergration\LogIntergration
+2020-07-16 15:01:34.862 +08:00 [DBG] Hosting started
+2020-07-16 15:01:35.040 +08:00 [DBG] Connection id "0HM19AO9U31A2" received FIN.
+2020-07-16 15:01:35.060 +08:00 [DBG] Connection id "0HM19AO9U31A2" accepted.
+2020-07-16 15:01:35.064 +08:00 [DBG] Connection id "0HM19AO9U31A2" started.
+2020-07-16 15:01:35.078 +08:00 [DBG] Connection id "0HM19AO9U31A2" sending FIN because: "The client closed the connection."
+2020-07-16 15:01:35.085 +08:00 [DBG] Connection id "0HM19AO9U31A2" disconnecting.
+2020-07-16 15:01:35.102 +08:00 [DBG] Connection id "0HM19AO9U31A2" stopped.
+2020-07-16 15:01:37.617 +08:00 [DBG] Connection id "0HM19AO9U31A3" accepted.
+2020-07-16 15:01:37.657 +08:00 [DBG] Connection id "0HM19AO9U31A3" started.
+2020-07-16 15:01:37.708 +08:00 [DBG] Connection id "0HM19AO9U31A4" accepted.
+2020-07-16 15:01:37.745 +08:00 [DBG] Connection id "0HM19AO9U31A4" started.
+2020-07-16 15:01:37.831 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/weatherforecast  
+2020-07-16 15:01:37.845 +08:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2020-07-16 15:01:37.864 +08:00 [WRN] Failed to determine the https port for redirect.
+2020-07-16 15:01:37.934 +08:00 [DBG] 1 candidate(s) found for the request path '/weatherforecast'
+2020-07-16 15:01:37.954 +08:00 [DBG] Endpoint 'LogIntergration.Controllers.WeatherForecastController.Get (LogIntergration)' with route pattern 'WeatherForecast' is valid for the request path '/weatherforecast'
+2020-07-16 15:01:37.960 +08:00 [DBG] Request matched endpoint 'LogIntergration.Controllers.WeatherForecastController.Get (LogIntergration)'
+2020-07-16 15:01:37.973 +08:00 [INF] Executing endpoint 'LogIntergration.Controllers.WeatherForecastController.Get (LogIntergration)'
+2020-07-16 15:01:38.006 +08:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexTypeModelBinderProvider"]
+2020-07-16 15:01:38.262 +08:00 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[LogIntergration.WeatherForecast] Get() on controller LogIntergration.Controllers.WeatherForecastController (LogIntergration).
+2020-07-16 15:01:38.285 +08:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2020-07-16 15:01:38.292 +08:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2020-07-16 15:01:38.298 +08:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2020-07-16 15:01:38.312 +08:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2020-07-16 15:01:38.321 +08:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2020-07-16 15:01:38.336 +08:00 [DBG] Executing controller factory for controller LogIntergration.Controllers.WeatherForecastController (LogIntergration)
+2020-07-16 15:01:38.349 +08:00 [DBG] Executed controller factory for controller LogIntergration.Controllers.WeatherForecastController (LogIntergration)
+2020-07-16 15:01:38.457 +08:00 [INF] Executing action method LogIntergration.Controllers.WeatherForecastController.Get (LogIntergration) - Validation state: "Valid"
+2020-07-16 15:01:38.467 +08:00 [ERR] sdsadsad
+2020-07-16 15:01:38.477 +08:00 [WRN] s111111111111111
+2020-07-16 15:01:38.491 +08:00 [INF] Executed action method LogIntergration.Controllers.WeatherForecastController.Get (LogIntergration), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 17.2125ms.
+2020-07-16 15:01:38.506 +08:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2020-07-16 15:01:38.520 +08:00 [DBG] No information found on request to perform content negotiation.
+2020-07-16 15:01:38.525 +08:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2020-07-16 15:01:38.529 +08:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2020-07-16 15:01:38.540 +08:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2020-07-16 15:01:38.549 +08:00 [INF] Executing ObjectResult, writing value of type 'LogIntergration.WeatherForecast[]'.
+2020-07-16 15:01:38.609 +08:00 [INF] Executed action LogIntergration.Controllers.WeatherForecastController.Get (LogIntergration) in 268.0595ms
+2020-07-16 15:01:38.620 +08:00 [INF] Executed endpoint 'LogIntergration.Controllers.WeatherForecastController.Get (LogIntergration)'
+2020-07-16 15:01:38.626 +08:00 [DBG] Connection id "0HM19AO9U31A3" completed keep alive response.
+2020-07-16 15:01:38.631 +08:00 [INF] Request finished in 806.6656ms 200 application/json; charset=utf-8
+2020-07-16 15:01:43.353 +08:00 [DBG] Connection id "0HM19AO9U31A3" received FIN.
+2020-07-16 15:01:43.353 +08:00 [DBG] Connection id "0HM19AO9U31A4" received FIN.
+2020-07-16 15:01:43.367 +08:00 [DBG] Connection id "0HM19AO9U31A3" sending FIN because: "The client closed the connection."
+2020-07-16 15:01:43.373 +08:00 [DBG] Connection id "0HM19AO9U31A4" disconnecting.
+2020-07-16 15:01:43.398 +08:00 [DBG] Connection id "0HM19AO9U31A3" disconnecting.
+2020-07-16 15:01:43.404 +08:00 [DBG] Connection id "0HM19AO9U31A4" sending FIN because: "The client closed the connection."
+2020-07-16 15:01:43.412 +08:00 [DBG] Connection id "0HM19AO9U31A3" stopped.
+2020-07-16 15:01:43.430 +08:00 [DBG] Connection id "0HM19AO9U31A4" stopped.
+2020-07-16 15:04:22.454 +08:00 [DBG] Hosting starting
+2020-07-16 15:04:22.798 +08:00 [DBG] Failed to locate the development https certificate at 'null'.
+2020-07-16 15:04:22.869 +08:00 [INF] Now listening on: http://localhost:5000
+2020-07-16 15:04:22.871 +08:00 [DBG] Loaded hosting startup assembly LogIntergration
+2020-07-16 15:04:22.874 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-07-16 15:04:22.877 +08:00 [INF] Hosting environment: Development
+2020-07-16 15:04:22.879 +08:00 [INF] Content root path: D:\Data\Project\MyTest\LogTest\LogIntergration\LogIntergration
+2020-07-16 15:04:22.882 +08:00 [DBG] Hosting started
+2020-07-16 15:04:23.227 +08:00 [DBG] Connection id "0HM19APS1VNRG" accepted.
+2020-07-16 15:04:23.227 +08:00 [DBG] Connection id "0HM19APS1VNRF" accepted.
+2020-07-16 15:04:23.234 +08:00 [DBG] Connection id "0HM19APS1VNRF" started.
+2020-07-16 15:04:23.234 +08:00 [DBG] Connection id "0HM19APS1VNRG" started.
+2020-07-16 15:04:23.291 +08:00 [DBG] Connection id "0HM19APS1VNRG" received FIN.
+2020-07-16 15:04:23.291 +08:00 [DBG] Connection id "0HM19APS1VNRF" received FIN.
+2020-07-16 15:04:23.359 +08:00 [DBG] Connection id "0HM19APS1VNRG" sending FIN because: "The client closed the connection."
+2020-07-16 15:04:23.359 +08:00 [DBG] Connection id "0HM19APS1VNRF" sending FIN because: "The client closed the connection."
+2020-07-16 15:04:23.369 +08:00 [DBG] Connection id "0HM19APS1VNRF" disconnecting.
+2020-07-16 15:04:23.369 +08:00 [DBG] Connection id "0HM19APS1VNRG" disconnecting.
+2020-07-16 15:04:23.382 +08:00 [DBG] Connection id "0HM19APS1VNRG" stopped.
+2020-07-16 15:04:23.382 +08:00 [DBG] Connection id "0HM19APS1VNRF" stopped.
+2020-07-16 15:04:25.689 +08:00 [DBG] Connection id "0HM19APS1VNRH" accepted.
+2020-07-16 15:04:25.750 +08:00 [DBG] Connection id "0HM19APS1VNRH" started.
+2020-07-16 15:04:25.755 +08:00 [DBG] Connection id "0HM19APS1VNRI" accepted.
+2020-07-16 15:04:25.776 +08:00 [DBG] Connection id "0HM19APS1VNRI" started.
+2020-07-16 15:04:25.899 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/weatherforecast  
+2020-07-16 15:04:25.929 +08:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2020-07-16 15:04:25.954 +08:00 [WRN] Failed to determine the https port for redirect.
+2020-07-16 15:04:26.011 +08:00 [DBG] 1 candidate(s) found for the request path '/weatherforecast'
+2020-07-16 15:04:26.028 +08:00 [DBG] Endpoint 'LogIntergration.Controllers.WeatherForecastController.Get (LogIntergration)' with route pattern 'WeatherForecast' is valid for the request path '/weatherforecast'
+2020-07-16 15:04:26.040 +08:00 [DBG] Request matched endpoint 'LogIntergration.Controllers.WeatherForecastController.Get (LogIntergration)'
+2020-07-16 15:04:26.056 +08:00 [INF] Executing endpoint 'LogIntergration.Controllers.WeatherForecastController.Get (LogIntergration)'
+2020-07-16 15:04:26.080 +08:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexTypeModelBinderProvider"]
+2020-07-16 15:04:26.243 +08:00 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[LogIntergration.WeatherForecast] Get() on controller LogIntergration.Controllers.WeatherForecastController (LogIntergration).
+2020-07-16 15:04:26.259 +08:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2020-07-16 15:04:26.262 +08:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2020-07-16 15:04:26.284 +08:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2020-07-16 15:04:26.311 +08:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2020-07-16 15:04:26.321 +08:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2020-07-16 15:04:26.340 +08:00 [DBG] Executing controller factory for controller LogIntergration.Controllers.WeatherForecastController (LogIntergration)
+2020-07-16 15:04:26.352 +08:00 [DBG] Executed controller factory for controller LogIntergration.Controllers.WeatherForecastController (LogIntergration)
+2020-07-16 15:04:26.467 +08:00 [INF] Executing action method LogIntergration.Controllers.WeatherForecastController.Get (LogIntergration) - Validation state: "Valid"
+2020-07-16 15:04:26.475 +08:00 [ERR] sdsadsad
+2020-07-16 15:04:26.479 +08:00 [WRN] s111111111111111
+2020-07-16 15:04:26.503 +08:00 [INF] Executed action method LogIntergration.Controllers.WeatherForecastController.Get (LogIntergration), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 22.7262ms.
+2020-07-16 15:04:26.522 +08:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2020-07-16 15:04:26.576 +08:00 [DBG] No information found on request to perform content negotiation.
+2020-07-16 15:04:26.585 +08:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2020-07-16 15:04:26.614 +08:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2020-07-16 15:04:26.637 +08:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2020-07-16 15:04:26.645 +08:00 [INF] Executing ObjectResult, writing value of type 'LogIntergration.WeatherForecast[]'.
+2020-07-16 15:04:26.693 +08:00 [INF] Executed action LogIntergration.Controllers.WeatherForecastController.Get (LogIntergration) in 347.6181ms
+2020-07-16 15:04:26.701 +08:00 [INF] Executed endpoint 'LogIntergration.Controllers.WeatherForecastController.Get (LogIntergration)'
+2020-07-16 15:04:26.716 +08:00 [DBG] Connection id "0HM19APS1VNRI" completed keep alive response.
+2020-07-16 15:04:26.725 +08:00 [INF] Request finished in 830.6199ms 200 application/json; charset=utf-8
+2020-07-16 15:04:28.382 +08:00 [DBG] Connection id "0HM19APS1VNRH" received FIN.
+2020-07-16 15:04:28.382 +08:00 [DBG] Connection id "0HM19APS1VNRI" received FIN.
+2020-07-16 15:04:28.397 +08:00 [DBG] Connection id "0HM19APS1VNRH" sending FIN because: "The client closed the connection."
+2020-07-16 15:04:28.404 +08:00 [DBG] Connection id "0HM19APS1VNRI" sending FIN because: "The client closed the connection."
+2020-07-16 15:04:28.423 +08:00 [DBG] Connection id "0HM19APS1VNRH" disconnecting.
+2020-07-16 15:04:28.438 +08:00 [DBG] Connection id "0HM19APS1VNRI" disconnecting.
+2020-07-16 15:04:28.454 +08:00 [DBG] Connection id "0HM19APS1VNRH" stopped.
+2020-07-16 15:04:28.462 +08:00 [DBG] Connection id "0HM19APS1VNRI" stopped.
+2020-07-16 15:05:02.065 +08:00 [INF] Application is shutting down...
+2020-07-16 15:05:02.068 +08:00 [DBG] Hosting stopping
+2020-07-16 15:05:02.127 +08:00 [DBG] Hosting stopped
+2020-07-16 15:06:06.520 +08:00 [DBG] Hosting starting
+2020-07-16 15:06:06.876 +08:00 [DBG] Failed to locate the development https certificate at 'null'.
+2020-07-16 15:06:06.973 +08:00 [INF] Now listening on: http://localhost:5000
+2020-07-16 15:06:06.976 +08:00 [DBG] Loaded hosting startup assembly LogIntergration
+2020-07-16 15:06:06.980 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-07-16 15:06:06.986 +08:00 [INF] Hosting environment: Development
+2020-07-16 15:06:06.992 +08:00 [INF] Content root path: D:\Data\Project\MyTest\LogTest\LogIntergration\LogIntergration
+2020-07-16 15:06:07.001 +08:00 [DBG] Hosting started
+2020-07-16 15:06:07.154 +08:00 [DBG] Connection id "0HM19AQR15HJ4" received FIN.
+2020-07-16 15:06:07.183 +08:00 [DBG] Connection id "0HM19AQR15HJ4" accepted.
+2020-07-16 15:06:07.195 +08:00 [DBG] Connection id "0HM19AQR15HJ4" started.
+2020-07-16 15:06:07.215 +08:00 [DBG] Connection id "0HM19AQR15HJ4" sending FIN because: "The client closed the connection."
+2020-07-16 15:06:07.228 +08:00 [DBG] Connection id "0HM19AQR15HJ4" disconnecting.
+2020-07-16 15:06:07.259 +08:00 [DBG] Connection id "0HM19AQR15HJ4" stopped.
+2020-07-16 15:06:09.740 +08:00 [DBG] Connection id "0HM19AQR15HJ5" accepted.
+2020-07-16 15:06:09.831 +08:00 [DBG] Connection id "0HM19AQR15HJ5" started.
+2020-07-16 15:06:09.839 +08:00 [DBG] Connection id "0HM19AQR15HJ6" accepted.
+2020-07-16 15:06:09.879 +08:00 [DBG] Connection id "0HM19AQR15HJ6" started.
+2020-07-16 15:06:09.952 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/weatherforecast  
+2020-07-16 15:06:10.033 +08:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2020-07-16 15:06:10.042 +08:00 [WRN] Failed to determine the https port for redirect.
+2020-07-16 15:06:10.095 +08:00 [DBG] 1 candidate(s) found for the request path '/weatherforecast'
+2020-07-16 15:06:10.102 +08:00 [DBG] Endpoint 'LogIntergration.Controllers.WeatherForecastController.Get (LogIntergration)' with route pattern 'WeatherForecast' is valid for the request path '/weatherforecast'
+2020-07-16 15:06:10.105 +08:00 [DBG] Request matched endpoint 'LogIntergration.Controllers.WeatherForecastController.Get (LogIntergration)'
+2020-07-16 15:06:10.111 +08:00 [INF] Executing endpoint 'LogIntergration.Controllers.WeatherForecastController.Get (LogIntergration)'
+2020-07-16 15:06:10.134 +08:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexTypeModelBinderProvider"]
+2020-07-16 15:06:10.265 +08:00 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[LogIntergration.WeatherForecast] Get() on controller LogIntergration.Controllers.WeatherForecastController (LogIntergration).
+2020-07-16 15:06:10.276 +08:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2020-07-16 15:06:10.290 +08:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2020-07-16 15:06:10.303 +08:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2020-07-16 15:06:10.310 +08:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2020-07-16 15:06:10.324 +08:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2020-07-16 15:06:10.328 +08:00 [DBG] Executing controller factory for controller LogIntergration.Controllers.WeatherForecastController (LogIntergration)
+2020-07-16 15:06:10.339 +08:00 [DBG] Executed controller factory for controller LogIntergration.Controllers.WeatherForecastController (LogIntergration)
+2020-07-16 15:06:10.432 +08:00 [INF] Executing action method LogIntergration.Controllers.WeatherForecastController.Get (LogIntergration) - Validation state: "Valid"
+2020-07-16 15:06:10.441 +08:00 [ERR] sdsadsad
+2020-07-16 15:06:10.451 +08:00 [WRN] s111111111111111
+2020-07-16 15:06:10.465 +08:00 [INF] Executed action method LogIntergration.Controllers.WeatherForecastController.Get (LogIntergration), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 17.6592ms.
+2020-07-16 15:06:10.477 +08:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2020-07-16 15:06:10.496 +08:00 [DBG] No information found on request to perform content negotiation.
+2020-07-16 15:06:10.507 +08:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2020-07-16 15:06:10.517 +08:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2020-07-16 15:06:10.532 +08:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2020-07-16 15:06:10.542 +08:00 [INF] Executing ObjectResult, writing value of type 'LogIntergration.WeatherForecast[]'.
+2020-07-16 15:06:10.593 +08:00 [INF] Executed action LogIntergration.Controllers.WeatherForecastController.Get (LogIntergration) in 258.1406ms
+2020-07-16 15:06:10.601 +08:00 [INF] Executed endpoint 'LogIntergration.Controllers.WeatherForecastController.Get (LogIntergration)'
+2020-07-16 15:06:10.611 +08:00 [DBG] Connection id "0HM19AQR15HJ5" completed keep alive response.
+2020-07-16 15:06:10.618 +08:00 [INF] Request finished in 672.6954ms 200 application/json; charset=utf-8
+2020-07-16 15:06:13.404 +08:00 [DBG] Connection id "0HM19AQR15HJ5" received FIN.
+2020-07-16 15:06:13.404 +08:00 [DBG] Connection id "0HM19AQR15HJ6" received FIN.
+2020-07-16 15:06:13.420 +08:00 [DBG] Connection id "0HM19AQR15HJ5" sending FIN because: "The client closed the connection."
+2020-07-16 15:06:13.434 +08:00 [DBG] Connection id "0HM19AQR15HJ6" sending FIN because: "The client closed the connection."
+2020-07-16 15:06:13.456 +08:00 [DBG] Connection id "0HM19AQR15HJ5" disconnecting.
+2020-07-16 15:06:13.466 +08:00 [DBG] Connection id "0HM19AQR15HJ6" disconnecting.
+2020-07-16 15:06:13.473 +08:00 [DBG] Connection id "0HM19AQR15HJ6" stopped.
+2020-07-16 15:06:13.473 +08:00 [DBG] Connection id "0HM19AQR15HJ5" stopped.
+2020-07-16 15:10:03.021 +08:00 [INF] Application is shutting down...
+2020-07-16 15:10:03.025 +08:00 [DBG] Hosting stopping
+2020-07-16 15:10:03.066 +08:00 [DBG] Hosting stopped
