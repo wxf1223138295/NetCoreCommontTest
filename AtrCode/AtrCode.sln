@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "斐波那契", "斐波那契\斐波那契.csproj", "{4D9F736D-2395-49D3-AA69-EAFAAAED0199}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "拥有最多糖果的孩子", "拥有最多糖果的孩子\拥有最多糖果的孩子.csproj", "{2CD55A79-3D2A-4AF5-8114-929264D8667E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4D9F736D-2395-49D3-AA69-EAFAAAED0199}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D9F736D-2395-49D3-AA69-EAFAAAED0199}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D9F736D-2395-49D3-AA69-EAFAAAED0199}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D9F736D-2395-49D3-AA69-EAFAAAED0199}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CD55A79-3D2A-4AF5-8114-929264D8667E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CD55A79-3D2A-4AF5-8114-929264D8667E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CD55A79-3D2A-4AF5-8114-929264D8667E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CD55A79-3D2A-4AF5-8114-929264D8667E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1EF71A9B-D5F7-4C19-8E9E-4C5FB72ED2F9}
+	EndGlobalSection
+EndGlobal
