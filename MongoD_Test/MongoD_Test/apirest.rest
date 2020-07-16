@@ -1,0 +1,47 @@
+@api = http://localhost:5000
+@api2=http://129.204.217.190:5000/connect/token
+@api3=http://localhost:5000
+
+@accesstoken=eyJhbGciOiJSUzI1NiIsImtpZCI6IjUyMzJhNTkwZjVkMDQxZDZkMzNhN2M3YjMyOTAwODU2IiwidHlwIjoiSldUIn0.eyJuYmYiOjE1OTI5MDk1MzEsImV4cCI6MTU5MjkxMDEzMSwiaXNzIjoiaHR0cDovL3NoYXdud29uZ2xlZS5jbjo1MDAwIiwiYXVkIjpbImh0dHA6Ly9zaGF3bndvbmdsZWUuY246NTAwMC9yZXNvdXJjZXMiLCJhcGkxIl0sImNsaWVudF9pZCI6ImNsaWVudCIsInNjb3BlIjpbImFwaTEiXX0.yHAo_-PWD8QkLtVhbFz6QebWJ2n9s1l8iQXzkLFp_tda6eZ6PQZ1WkqtE1ExJPEv0NVBMh_k12Oo4RKuHwwKGiohbcV0h3u39KR5FGekn9EdM3aYAH7SBnoyI4btVGQMKAcZ-erE0oQL3pJm138mv6-fqhrHG_5x0OxSpHx900AxZvLs0U0B2UxrpEQeCIaddDbrjxDjkf3ocDZWVhmqneobrxCqISZM7eTVYuyNkTlm_7_ck8A9toofPi8tSfsRI5setxDOaY2qObYEKVf9p1sRMycsCe4PYLuhyG4AeN7WccUlqLPyEE-nt6u71a6tvcebxRvFzx0lfMGLHnEQZg
+
+###
+GET {{api3}}/weatherforecast
+Content-Type: application/json
+Authorization: Bearer {{accesstoken}}
+
+
+
+###
+GET {{api3}}/api/values/GetTest
+Content-Type: application/json
+Authorization: Bearer {{accesstoken}}
+
+
+
+
+
+### Authenticate and grab the access token
+# @name DeleteOrder
+POST {{api}}/api/Order/OrderShip
+Content-Type: application/json
+
+{
+  "OrderNo": "1223138295",
+  "State":1,
+  "Amount":20,
+  "OrderDesc":"订单测试描述"
+}
+
+
+###
+# @name DeleteOrder
+POST {{api}}/api/Order/BookShip
+Content-Type: application/json
+
+{
+    "BookNo":"1223138295",
+    "Author":"ShawnWang",
+    "BookName":"TestBook",
+    "Category":"Color",
+    "Price":14
+}
