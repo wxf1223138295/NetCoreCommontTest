@@ -22,7 +22,7 @@ namespace Api1.Controllers
         public string Get()
         {
   
-            return "This is ";
+            return "This is api1";
         }
     }
 }
