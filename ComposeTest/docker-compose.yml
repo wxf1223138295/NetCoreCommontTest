@@ -2,11 +2,23 @@ version: '3.4'
   
 services:
   apie:
+    image: apietest1
+    container_name: apiecontainer
+    ports:
+      - '8001:8001'
     build:
       context: .
       dockerfile: ApiE/Api2/Dockerfile
-  
+      
+    
+
   apis:
+    image: apistest2
+    container_name: apiscontainer
+    ports:
+      - '8002:8002'
     build:
       context: .
       dockerfile: ApiS/Api1/Dockerfile
+      
+    
