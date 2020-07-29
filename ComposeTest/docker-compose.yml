@@ -1,0 +1,12 @@
+version: '3.4'
+  
+services:
+  apie:
+    build:
+      context: .
+      dockerfile: ApiE/Api2/Dockerfile
+  
+  apis:
+    build:
+      context: .
+      dockerfile: ApiS/Api1/Dockerfile
