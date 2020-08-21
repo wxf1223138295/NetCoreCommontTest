@@ -21,8 +21,17 @@ namespace Api1.Controllers
         [HttpGet]
         public string Get()
         {
-  
+            var t=45 % 16;
+
             return "This is api1";
+        }
+
+
+        public class ListNode
+        {
+            public int val;
+            public ListNode next;
+            public ListNode(int x) { val = x; }
         }
     }
 }
