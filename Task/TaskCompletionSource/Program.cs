@@ -1,20 +1,28 @@
 ﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace TaskCompletionSource
 {
+
+    class Test
+    {
+        public volatile int a;
+    }
     class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
-           TaskCompletionSource<string> tcs=new TaskCompletionSource<string>();
+            
 
-           var api=new EventClass();
-           api.Done += (arg) => {tcs.SetResult(arg); };
+            //TaskCompletionSource<string> tcs=new TaskCompletionSource<string>();
 
-           api.Do();
+            //var api=new EventClass();
+            //api.Done += (arg) => {tcs.SetResult(arg); };
 
-           Console.WriteLine();
+            //api.Do();
+
+            Console.WriteLine("OK");
            Console.ReadKey();
         }
     }

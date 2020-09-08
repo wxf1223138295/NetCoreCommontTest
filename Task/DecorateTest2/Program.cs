@@ -27,6 +27,9 @@ namespace DecorateTest2
                     {
                         
                         services.AddControllers();
+
+                        services.AddHttpClient();
+                        services.AddHttpContextAccessor();
                     });
                     webBuilder.Configure((context,app) =>
                     {
