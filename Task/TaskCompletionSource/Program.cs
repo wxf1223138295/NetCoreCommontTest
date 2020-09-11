@@ -13,17 +13,31 @@ namespace TaskCompletionSource
     {
         static async Task Main(string[] args)
         {
-            
 
-            //TaskCompletionSource<string> tcs=new TaskCompletionSource<string>();
+            bool complete = false;
+            new Thread(delegate ()
+            {
+                bool toggle = false;
+                Console.Write("4");
+                while (!complete)
+                {
+                    Console.Write("4");
+                    Thread.Sleep(1000);
+                    Console.Write("1");
+                    toggle = !toggle;
+                }
+                  
+            }).Start();
 
-            //var api=new EventClass();
-            //api.Done += (arg) => {tcs.SetResult(arg); };
+            Thread.Sleep(1000);
 
-            //api.Do();
 
-            Console.WriteLine("OK");
-           Console.ReadKey();
+            complete = true;
+
+
+
+            Console.WriteLine("ss");
+            Console.ReadKey();
         }
     }
 

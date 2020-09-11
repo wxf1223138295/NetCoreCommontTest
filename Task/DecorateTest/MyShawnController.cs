@@ -15,6 +15,7 @@ namespace DecorateTest
 
         public MyShawnController(IShawnRepository repository)
         {
+            throw new NullReferenceException();
             _repository = repository;
         }
         [HttpGet]

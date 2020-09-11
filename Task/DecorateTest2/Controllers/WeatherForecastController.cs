@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Threading;
 using System.Threading.Tasks;
 using DecorateTest2.MyScheduler;
@@ -10,88 +12,383 @@ using Microsoft.Extensions.Logging;
 
 namespace DecorateTest2.Controllers
 {
+
+    public class test
+    {
+        public ThreadLocal<int> testint = new ThreadLocal<int>();
+    }
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class WeatherForecastController : ControllerBase
     {
-    
+
         private readonly ILogger<WeatherForecastController> _logger;
 
         public WeatherForecastController(ILogger<WeatherForecastController> logger)
         {
             _logger = logger;
         }
+        public static ThreadLocal<int> testint = new ThreadLocal<int>();
 
-        private async Task<List<int>> Test()
+        private static object lockobj = new object();
+
+
+        [HttpGet("get3")]
+        public async Task<string> Get6()
         {
-            return await Task.FromResult(new List<int>{1,2,3,4,5});
+
+
+            int a = 0;
+            Stopwatch watch = new Stopwatch();
+
+            watch.Start();
+
+
+            Parallel.For(1, 101, (i) =>
+            {
+                int coms = 0;
+                try
+                {
+                    while (Interlocked.CompareExchange(ref coms, 1, 0) == 1)
+                    {
+                        Console.WriteLine($"线程Id：{Thread.CurrentThread.ManagedThreadId}，开始：a= {a}");
+                        a = a + i;
+
+                        Interlocked.Exchange(ref coms, 0);
+                    }
+
+                   
+
+
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    throw;
+                }
+                Console.WriteLine($"线程Id：{Thread.CurrentThread.ManagedThreadId}，结束：a= {a}");
+            });
+            Console.WriteLine($"sum:{a}");
+
+            watch.Stop();
+            TimeSpan ts = watch.Elapsed;
+
+            Console.WriteLine($"耗时：{ts.Milliseconds}");
+            return "2";
         }
-        [HttpGet]
-        public string Get(CancellationToken token)
+
+        [HttpGet("get6")]
+        public async Task<string> Get5()
         {
-            List<int> list=new List<int>{1,2,3,4,5,6,7,8,9,10};
+            SpinWait spinner = new SpinWait();
 
 
-            LimitedConcurrencyLevelTaskScheduler scheduler=new LimitedConcurrencyLevelTaskScheduler(1);
+            int a = 0;
+            Stopwatch watch = new Stopwatch();
 
-            TaskFactory factory = new TaskFactory(scheduler);
+            watch.Start();
 
 
-
-            factory.StartNew(() =>
+            Parallel.For(1, 101, (i) =>
             {
-
-                Thread.Sleep(5000);
-                foreach (var i in list)
+                try
                 {
-                    if (i % 2 > 0)
+                    lock (lockobj)
                     {
-                        Console.WriteLine($"count1:{i}");
+                        Console.WriteLine($"线程Id：{Thread.CurrentThread.ManagedThreadId}，开始：a= {a}");
+                        a = a + i;
                     }
+
                 }
-            },TaskCreationOptions.LongRunning);
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    throw;
+                }
+                Console.WriteLine($"线程Id：{Thread.CurrentThread.ManagedThreadId}，结束：a= {a}");
+            });
+            Console.WriteLine($"sum:{a}");
+
+            watch.Stop();
+            TimeSpan ts = watch.Elapsed;
+
+            Console.WriteLine($"耗时：{ts.Milliseconds}");
+            return "2";
+        }
+        [HttpGet("get5")]
+        public async Task<string> Get4()
+        {
+            SpinWait spinner = new SpinWait();
 
 
-            factory.StartNew(() =>
+            int a = 0;
+            Stopwatch watch = new Stopwatch();
+
+            watch.Start();
+
+            var sl = new SpinLock(true);
+            Parallel.For(1, 101, (i) =>
             {
-                Thread.Sleep(5000);
-                foreach (var i in list)
+                var lockTaken = false;
+                try
                 {
-                    if (i % 2 > 0)
-                    {
-                        Console.WriteLine($"count2:{i}");
-                    }
+                    sl.Enter(ref lockTaken);
+                    Console.WriteLine($"线程Id：{Thread.CurrentThread.ManagedThreadId}，开始：a= {a}");
+                    a = a + i;
                 }
-            },  TaskCreationOptions.LongRunning);
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    throw;
+                }
+                finally
+                {
+                    if (lockTaken) sl.Exit();
+                }
+                Console.WriteLine($"线程Id：{Thread.CurrentThread.ManagedThreadId}，结束：a= {a}");
+            });
+            Console.WriteLine($"sum:{a}");
+
+            watch.Stop();
+            TimeSpan ts = watch.Elapsed;
+
+            Console.WriteLine($"耗时：{ts.Milliseconds}");
+            return "2";
+        }
 
 
-            factory.StartNew(() =>
+
+        [HttpGet("get4")]
+        public async Task<string> Get3()
+        {
+            int a = 0;
+            Stopwatch watch = new Stopwatch();
+
+            watch.Start();
+
+            Parallel.For(1, 101, (i) =>
             {
-                Thread.Sleep(5000);
-                foreach (var i in list)
+                var lockTaken = false;
+                try
                 {
-                    if (i % 2 > 0)
+                    Console.WriteLine($"线程Id：{Thread.CurrentThread.ManagedThreadId}，开始：a= {a}");
+
+                    while (!lockTaken)
                     {
-                        Console.WriteLine($"count3:{i}");
+                        Monitor.TryEnter(lockobj, ref lockTaken);
                     }
+
+                    if (lockTaken)
+                    {
+
+
+                        Thread.MemoryBarrier();
+
+                        a = a + i;
+
+
+                        Thread.MemoryBarrier();
+                    }
+
+
+
                 }
-            }, TaskCreationOptions.LongRunning);
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    throw;
+                }
+                finally
+                {
+                    if (lockTaken)
+                    {
+                        Monitor.Exit(lockobj);
+                    }
+
+                }
+
+                Console.WriteLine($"线程Id：{Thread.CurrentThread.ManagedThreadId}，结束：a= {a}");
+            });
+
+            Console.WriteLine($"sum:{a}");
+
+            watch.Stop();
+            TimeSpan ts = watch.Elapsed;
+
+            Console.WriteLine($"耗时：{ts.Milliseconds}");
 
 
-            var taskid2=TaskScheduler.Default.Id;
+            return "2";
+        }
 
-            var taskid212 = TaskScheduler.Current.Id;
 
-            var taskid22 = factory.Scheduler.Id;
 
-            Console.WriteLine($"def:{taskid2} curr{taskid212}  fac {taskid22}");
+        [HttpGet("get4")]
+        public async Task<string> Get4(CancellationToken token)
+        {
+            //Volatile.Read()
 
-            var tt = factory.Scheduler.MaximumConcurrencyLevel;
+            int a = 0;
 
-            Console.WriteLine($"MAX:{tt}");
+            int isModifying = 0;
+
+            testint.Value = 3333;
+            Console.WriteLine($"threadlocal:{testint.Value},线程Id：{Thread.CurrentThread.ManagedThreadId}");
+            Console.WriteLine("__________________________________________________________");
+            List<int> list = new List<int> { 1, 2, 3, 4, 5, 6 };
+
+            var tasks = list.Select(async (p) =>
+              {
+                  await Task.Delay(1000);
+
+                  if (1 == Interlocked.CompareExchange(ref isModifying, 1, 0))
+                  {
+                      a = a + 1;
+                      Interlocked.Exchange(ref isModifying, 0);
+                  }
+                  Console.WriteLine($"线程Id：{Thread.CurrentThread.ManagedThreadId}");
+
+                  //testint.Value = p;
+                  //var t = TaskScheduler.Current;
+                  //var ttt = TaskScheduler.Default;
+                  //var tt = SynchronizationContext.Current;
+                  //if (tt != null)
+                  //{
+                  //    Console.WriteLine($"线程Id：{Thread.CurrentThread.ManagedThreadId}的同步上下文不为空");
+                  //}
+
+                  //Console.WriteLine($"threadlocal:{testint.Value},当前运行到 ：{p.ToString()},线程Id：{Thread.CurrentThread.ManagedThreadId},currentschedulerid:{t.Id},currentmaxcon{t.MaximumConcurrencyLevel},defaultscheduler:{ttt.Id},defaultconmax:{ttt.MaximumConcurrencyLevel}");
+
+
+              });
+
+
+            await Task.WhenAll(tasks);
+            Console.WriteLine("__________________________________________________________");
+
+            Console.WriteLine($"a={a}");
+
+            var t = TaskScheduler.Current;
+            var ttt = TaskScheduler.Default;
+            var tt = SynchronizationContext.Current;
+
+            Console.WriteLine($"threadlocal:{testint.Value},线程Id：{Thread.CurrentThread.ManagedThreadId},currentschedulerid:{t.Id},currentmaxcon{t.MaximumConcurrencyLevel},defaultscheduler:{ttt.Id},defaultconmax:{ttt.MaximumConcurrencyLevel}");
+
+            return 0.ToString();
+        }
+        [HttpGet("get2")]
+        public async Task<string> Get2(CancellationToken token)
+        {
+            //var t1=Task.Run(async () =>
+            // {
+            //     await Task.Delay(2000);
+            //     Console.WriteLine($"Task1的线程id:{ Thread.CurrentThread.ManagedThreadId}");
+            // });
+
+            //var t= Task.Run(async () =>
+            // {
+            //     await Task.Delay(3000);
+            //     Console.WriteLine($"Task2的线程id:{ Thread.CurrentThread.ManagedThreadId}");
+            // });
+
+            // var t3=Task.Run(async () =>
+            // {
+            //     await Task.Delay(4000);
+            //     Console.WriteLine($"Task3的线程id:{ Thread.CurrentThread.ManagedThreadId}");
+            // });
+
+
+
+
+
+
+
+
+            try
+            {
+                Console.WriteLine("await");
+                await Task.Run(() =>
+                {
+
+                    while (true)
+                    {
+                        if (token.IsCancellationRequested)
+                        {
+                            token.ThrowIfCancellationRequested();
+                        }
+                        Thread.Sleep(5000);
+                        Console.WriteLine("222");
+
+                    }
+
+
+
+                }, token);
+
+            }
+            catch (OperationCanceledException e)
+            {
+                Console.WriteLine(e.Message);
+                throw;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+
+            return "22";
+        }
+        [HttpGet("get")]
+        public async Task<string> Get()
+        {
+            var canccs = new CancellationTokenSource();
+            var token = canccs.Token;
+
+            List<int> list = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+
+            LimitedConcurrencyLevelTaskScheduler scheduler = new LimitedConcurrencyLevelTaskScheduler(1);
+
+
+
+
+
+            var task = Task.Run(() =>
+              {
+                  token.ThrowIfCancellationRequested();
+                  while (true)
+                  {
+                      if (token.IsCancellationRequested)
+                      {
+                          // Clean up here, then...
+                          token.ThrowIfCancellationRequested();
+                      }
+                  }
+              }, token);
+
+            canccs.Cancel();
+
+            try
+            {
+                await task;
+            }
+            catch (OperationCanceledException ex)
+            {
+                Console.WriteLine(ex);
+                throw;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
 
 
             return "sdsdsds";
         }
     }
+
+
+
 }

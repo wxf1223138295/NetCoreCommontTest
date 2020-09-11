@@ -147,7 +147,7 @@ namespace DecorateTest2.MyScheduler
             lock (_tasks)
                 return _tasks.Remove(task);
         }
-
+         
         /// <summary>Gets an enumerable of the tasks currently scheduled on this scheduler.</summary>
         /// <returns>An enumerable of the tasks currently scheduled.</returns>
         protected sealed override IEnumerable<Task> GetScheduledTasks()
