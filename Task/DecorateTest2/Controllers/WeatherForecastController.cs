@@ -32,8 +32,69 @@ namespace DecorateTest2.Controllers
 
         private static object lockobj = new object();
 
+        public static int LengthOfLongestSubstring(string s)
+        {
+            if (s.Length <= 0)
+            {
+                return 0;
+            }
+            List<char> listsstr = new List<char>();
+            int maxvalu = 0;
+            //左指针
+            int point = -1;
+            //i 有指针
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (i != 0)
+                {
+                    //窗口 右移动  删除 窗口外 
+                    listsstr.Remove(s.ElementAt(i - 1));
+                }
+                while (point + 1 < s.Length && !listsstr.Contains(s.ElementAt(point)))
+                {
+                    listsstr.Add(s.ElementAt(point));
+                    ++point;
+                }
+                maxvalu = Math.Max(maxvalu, point - i + 1);
+            }
+
+            return maxvalu;
+        }
 
         [HttpGet("get3")]
+        public async Task<string> Get7()
+        {
+            var count= ThreadPool.ThreadCount;
+
+           Console.WriteLine($"线程池线程数：{count}");
+
+           ThreadLocal<int> tt=new ThreadLocal<int>();
+           tt.Value = 2;
+
+               int maxworkthread = 0;
+           int maxcomthread = 0;
+           int minwordthread = 0;
+           int mincomthread = 0;
+           ThreadPool.GetMaxThreads(out maxworkthread,out maxcomthread);
+           Console.WriteLine($"MaxWork:{maxworkthread},MaxIO:{maxcomthread}");
+
+           ThreadPool.GetMinThreads(out minwordthread,out mincomthread);
+           Console.WriteLine($"MinWork:{minwordthread},MinIO:{mincomthread}");
+
+            int avaworkthread = 0;
+           int avaconthread = 0;
+           ThreadPool.GetAvailableThreads(out avaworkthread,out avaconthread);
+           Console.WriteLine($"AvaWork:{minwordthread},AvaIO:{mincomthread}");
+
+           string s = "";
+           
+
+           
+
+            return ";";
+        }
+
+        [HttpGet("get4")]
         public async Task<string> Get6()
         {
 
