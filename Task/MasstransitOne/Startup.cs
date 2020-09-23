@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
@@ -26,15 +27,26 @@ namespace MasstransitOne
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddMassTransit(x =>
+
+            services.Configure<HealthCheckPublisherOptions>(options =>
             {
-                x.UsingRabbitMq();
+                options.Delay = TimeSpan.FromSeconds(5);
+                options.Predicate = (check) => check.Tags.Contains("ready");
             });
 
-            var tt=Bus.Factory.CreateUsingRabbitMq(p => { });
+            services.AddMassTransit(x =>
+            {
+                x.UsingRabbitMq((a, b) =>
+                {
+                    b.Host("115.159.155.126", "my_vhost", p =>
+                    {
+                        p.Username("admin");
+                        p.Password("admin");
+                    });
+                });
+         
+            });
 
-
-            
 
             services.AddMassTransitHostedService();
         }
@@ -46,6 +58,8 @@ namespace MasstransitOne
             {
                 app.UseDeveloperExceptionPage();
             }
+            
+            app.AddHealthCheckMiddleware();
 
             app.UseRouting();
 

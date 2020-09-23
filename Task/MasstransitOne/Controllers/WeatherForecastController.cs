@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using MassTransit;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -16,6 +17,7 @@ namespace MasstransitOne.Controllers
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
 
+        private readonly IBus _bus;
         private readonly ILogger<WeatherForecastController> _logger;
 
         public WeatherForecastController(ILogger<WeatherForecastController> logger)
@@ -26,6 +28,7 @@ namespace MasstransitOne.Controllers
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
+      
             var rng = new Random();
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
