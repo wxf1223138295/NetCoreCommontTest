@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using MassTransit;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace MasstransitOne.Controllers
+namespace ThreadAsync.Controllers
 {
     [ApiController]
     [Route("[controller]")]
@@ -17,20 +16,24 @@ namespace MasstransitOne.Controllers
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
 
-        private readonly IBusControl _bus;
         private readonly ILogger<WeatherForecastController> _logger;
 
-        public WeatherForecastController(IBusControl bus, ILogger<WeatherForecastController> logger)
+        public WeatherForecastController(ILogger<WeatherForecastController> logger)
         {
-            _bus = bus;
             _logger = logger;
         }
 
         [HttpGet]
-        public string Get()
+        public IEnumerable<WeatherForecast> Get()
         {
-            _bus
-            return "s";
+            var rng = new Random();
+            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            {
+                Date = DateTime.Now.AddDays(index),
+                TemperatureC = rng.Next(-20, 55),
+                Summary = Summaries[rng.Next(Summaries.Length)]
+            })
+            .ToArray();
         }
     }
 }
