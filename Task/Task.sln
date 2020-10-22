@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskCompletionSource", "TaskCompletionSource\TaskCompletionSource.csproj", "{EE4B8739-D291-4E63-B45E-0EE222017B69}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DecorateTest", "DecorateTest\DecorateTest.csproj", "{6671620A-4892-40DF-8754-A87B8A357E17}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DecorateTest", "DecorateTest\DecorateTest.csproj", "{6671620A-4892-40DF-8754-A87B8A357E17}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DecorateTest2", "DecorateTest2\DecorateTest2.csproj", "{4FAD8146-23E3-4EE2-9138-8218BD5616F3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DecorateTest2", "DecorateTest2\DecorateTest2.csproj", "{4FAD8146-23E3-4EE2-9138-8218BD5616F3}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MasstransitOne", "MasstransitOne\MasstransitOne.csproj", "{8ACFACB2-5129-4185-B3F1-64D76E36CFA6}"
 EndProject

@@ -97,23 +97,28 @@ namespace DecorateTest2.Controllers
         [HttpGet("get4")]
         public async Task<string> Get6()
         {
-
+           // Thread.CurrentThread.ExecutionContext
+            
+            //ExecutionContext.SuppressFlow();
 
             int a = 0;
             Stopwatch watch = new Stopwatch();
 
             watch.Start();
 
-
+            int coms = 0;
             Parallel.For(1, 101, (i) =>
             {
-                int coms = 0;
+               
                 try
                 {
-                    while (Interlocked.CompareExchange(ref coms, 1, 0) == 1)
+
+                    while(Interlocked.CompareExchange(ref coms, 1, 0) == 1)
                     {
                         Console.WriteLine($"线程Id：{Thread.CurrentThread.ManagedThreadId}，开始：a= {a}");
+                    
                         a = a + i;
+           
 
                         Interlocked.Exchange(ref coms, 0);
                     }
