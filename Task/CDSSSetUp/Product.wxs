@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="*" Name="CDSS小助手" Language="1033" Version="1.0.0.0" Manufacturer="森亿智能" UpgradeCode="a21b41a5-471b-4f7f-bdc5-68254350dc33">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+		<MediaTemplate />
+
+		<Feature Id="ProductFeature" Title="CDSSSetUp" Level="1">
+			<ComponentGroupRef Id="ProductComponents" />
+			<ComponentRef Id="LibsFiles"/>
+		</Feature>
+	</Product>
+
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLFOLDER" Name="CDSSSetUp" />
+			</Directory>
+		</Directory>
+	</Fragment>
+
+	<Fragment>
+		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+			<!-- TODO: Remove the comments around this Component element and the ComponentRef below in order to add resources to this installer. -->
+			<!-- <Component Id="ProductComponent"> -->
+			<Component Id="ProductComponent">
+				<File Id="SmartTool.exe" Source="$(var.MSIInstall.TargetPath)"/>
+			</Component>
+				<!-- TODO: Insert files, registry keys, and other resources here. -->
+			<!-- </Component> -->
+		</ComponentGroup>
+		<DirectoryRef Id="InstallDir">
+			<Component Id="LibsFiles" Guid="ae8c83a1-7615-4439-bf90-4c39db24986f">
+				<File Id="MSIInstall.exe" Source="LibFiles/MSIInstall.exe"/>
+			</Component>
+		</DirectoryRef>
+
+		<DirectoryRef Id="ApplicationProgramsFolder">
+			<Component Id="ApplicationShortcut" Guid="5A254682-DD5F-453D-8333-144457282026">
+				<Shortcut Id="LunchApplicationShortcut" Name="CDSS小助手" Description="CDSS小助手" Target="[InstallDir]MSIInstall.exe" WorkingDirectory="InstallDir">
+					<Icon Id="ico_install" SourceFile="Icons/phyic.png"/>
+				</Shortcut>
+				<Shortcut Id="UninstallApplicationShortcut" Name="CDSS卸载" Description="CDSS卸载" Target="[SystemFolder]msiexec.exe" WorkingDirectory="SystemFolder"  Arguments="/x [ProductCode]">
+					<Icon Id="ico_uninstall" SourceFile="Icons/phyic.png"/>
+				</Shortcut>
+				<RemoveFolder Id="ApplicationProgramsFolder" On ="uninstall"/>
+				<RegistryValue Root="HKCU" Key="Software\Microsoft\SmartTool" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
+			</Component>
+		</DirectoryRef>
+
+		<DirectoryRef Id="DesktopFolder">
+			<Component Id="DesktopFolderShortcut" Guid="5A254676-DD1F-453D-8333-144457282027">
+				<Shortcut Id="DesktopShortcut" Directory="DesktopFolder" Name="小助手" Target="[InstallDir]MSIInstall.exe" WorkingDirectory="InstallDir" Icon="ico_install">
+				</Shortcut>
+				<RegistryValue Root="HKCU" Key="Software\Microsoft\SmartTool" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
+
+			</Component>
+		</DirectoryRef>
+	</Fragment>
+</Wix>

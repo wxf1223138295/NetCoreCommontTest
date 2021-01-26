@@ -1,0 +1,9 @@
+﻿  pch.cpp
+  AssemblyInfo.cpp
+  CppConsole.cpp
+D:\Data\Project\MyTest\git相关test\NetCoreCommontTest\Task\CppConsole\CppConsole.cpp(9,56): warning C4691: “System::Object”: 未引用的 程序集“netstandard”中应使用引用的类型，但使用了当前翻译单元中定义的类型
+D:\Data\Project\MyTest\git相关test\NetCoreCommontTest\Task\CppConsole\CppConsole.cpp(9,56): message : 在导入类型“TestCpp::ShawnShow ”(从程序集“TestCpp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null”中导入)时发生此诊断。
+  正在生成代码...
+  .NETFramework,Version=v4.0.AssemblyAttributes.cpp
+  AssemblyInfo.obj : 遇到了 MSIL 模块；对 MSIL 禁用了增量链接；正在执行完全链接
+  CppConsole.vcxproj -> D:\Data\Project\MyTest\git相关test\NetCoreCommontTest\Task\Debug\CppConsole.exe

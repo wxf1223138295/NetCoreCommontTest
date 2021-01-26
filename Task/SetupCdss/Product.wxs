@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"><?define MSIInstall_TargetDir=$(var.MSIInstall.TargetDir)?>
+	<Product Id="*" Name="SetupCdss" Language="1033" Version="1.0.0.0" Manufacturer="Synyi.cdss.client" UpgradeCode="8b11353a-00b1-40da-8c87-c8d7ff11558b">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+		<Icon Id="icon.ico" SourceFile="$(var.ProjectDir)phyic.png" />
+		<Property Id="ARPPRODUCTICON" Value="icon.ico" />
+
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+		<MediaTemplate EmbedCab="yes" />
+
+		<Feature Id="ProductFeature" Title="SetupCdss" Level="1">
+			<ComponentGroupRef Id="ProductComponents" />
+			<ComponentRef Id="ApplicationShortcut" />
+			<ComponentRef Id="ApplicationShortcutDesktop" />
+		</Feature>
+	</Product>
+
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLFOLDER" Name="SetupCdss" />
+			</Directory>
+			<Directory Id="ProgramMenuFolder">
+				<Directory Id="ApplicationProgramsFolder" Name="Cdss.Client" />
+			</Directory>
+			<Directory Id="DesktopFolder" Name="Desktop" />
+		</Directory>
+	</Fragment>
+
+	<Fragment>
+		<DirectoryRef Id="ApplicationProgramsFolder">
+			<Component Id="ApplicationShortcut" Guid="9bd13330-6540-406f-a3a8-d7f7c69ae7f9">
+				<Shortcut Id="ApplicationStartMenuShortcut" Name="Cdss.Client" Description="MyTest" Target="[INSTALLFOLDER]MSIInstall.exe" WorkingDirectory="INSTALLFOLDER" />
+				<RemoveFolder Id="RemoveApplicationProgramsFolder" Directory="ApplicationProgramsFolder" On="uninstall" />
+				<RegistryValue Root="HKCU" Key="Software\MyWpfApplication" Name="installed" Type="integer" Value="1" KeyPath="yes" />
+			</Component>
+		</DirectoryRef>
+		<DirectoryRef Id="DesktopFolder">
+			<Component Id="ApplicationShortcutDesktop" Guid="cde1e030-eb64-49a5-b7b8-400b379c2d1a">
+				<Shortcut Id="ApplicationDesktopShortcut" Name="Cdss.Client" Description="MyTest" Target="[INSTALLFOLDER]MSIInstall.exe" WorkingDirectory="INSTALLFOLDER" />
+				<RemoveFolder Id="RemoveDesktopFolder" Directory="DesktopFolder" On="uninstall" />
+				<RegistryValue Root="HKCU" Key="Software\MyWpfApplication" Name="installed" Type="integer" Value="1" KeyPath="yes" />
+			</Component>
+		</DirectoryRef>
+	</Fragment>
+
+	<Fragment>
+		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+			<!-- TODO: Remove the comments around this Component element and the ComponentRef below in order to add resources to this installer. -->
+			<!-- <Component Id="ProductComponent"> -->
+				<!-- TODO: Insert files, registry keys, and other resources here. -->
+			<!-- </Component> -->
+			
+			<Component Id="MSIInstall.exe" Guid="b7059366-f407-4a48-ab4b-7292c067bc84">
+			  <File Id="MSIInstall.exe" Name="MSIInstall.exe" Source="$(var.MSIInstall_TargetDir)MSIInstall.exe" />
+			</Component>
+		</ComponentGroup>
+	</Fragment>
+</Wix>

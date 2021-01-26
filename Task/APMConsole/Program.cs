@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -31,7 +32,7 @@ namespace APMConsole
 
         public static void CallbackFun(IAsyncResult result)
         {
-            var sssd=result.AsyncState as string;
+            var sssd = result.AsyncState as string;
             Console.WriteLine(sssd);
             while (true)
             {
@@ -48,7 +49,11 @@ namespace APMConsole
 
             Console.WriteLine($"异步结束,当前线程{Thread.CurrentThread.ManagedThreadId.ToString()}");
 
-           // Thread.Sleep(2000);
+            // Thread.Sleep(2000);
+            Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+
+            
+
         }
     }
 }
